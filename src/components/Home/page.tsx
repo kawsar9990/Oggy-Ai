@@ -73,6 +73,7 @@ export default function HomePage() {
     }
   };
 
+  
   return (
     <div
       className={`flex h-[100dvh] flex-col transition-colors duration-200 ${
@@ -81,48 +82,48 @@ export default function HomePage() {
           : "bg-slate-50 text-slate-800"
       }`}
     >
-    
       <header
-        className={`sticky top-0 z-10 flex items-center justify-between border-b px-4 py-3 backdrop-blur ${
+        className={`sticky top-0 z-10 border-b px-4 py-3 backdrop-blur ${
           isDarkMode
             ? "border-slate-800 bg-[#0B1120]/90 text-slate-100"
             : "border-slate-200 bg-white/90 text-slate-800"
         }`}
       >
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-500 text-lg font-bold text-[#0B1120] overflow-hidden">
-            <img 
-              src="/icon.png" 
-              alt="Oggy Logo" 
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-semibold">Ask For OGGY</span>
-            <span className="flex items-center gap-1.5 text-xs text-slate-400">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400"></span>
+        <div className="mx-auto flex max-w-2xl items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-500 text-lg font-bold text-[#0B1120] overflow-hidden">
+              <img
+                src="/icon.png"
+                alt="Oggy Logo"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-semibold">Ask For OGGY</span>
+              <span className="flex items-center gap-1.5 text-xs text-slate-400">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400"></span>
+                </span>
+                Online
               </span>
-              Online
-            </span>
+            </div>
           </div>
-        </div>
 
-        <button
-          onClick={toggleTheme}
-          className={`flex h-9 cursor-pointer w-9 items-center justify-center rounded-full border transition ${
-            isDarkMode
-              ? "border-slate-700 bg-[#141B2D] text-amber-400 hover:bg-slate-800"
-              : "border-slate-300 bg-slate-100 text-[#0B1120] hover:bg-slate-200"
-          }`}
-          aria-label="Toggle Theme"
-        >
-          {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
-        </button>
+          <button
+            onClick={toggleTheme}
+            className={`flex h-9 cursor-pointer w-9 items-center justify-center rounded-full border transition ${
+              isDarkMode
+                ? "border-slate-700 bg-[#141B2D] text-amber-400 hover:bg-slate-800"
+                : "border-slate-300 bg-slate-100 text-[#0B1120] hover:bg-slate-200"
+            }`}
+            aria-label="Toggle Theme"
+          >
+            {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+        </div>
       </header>
 
-     
       <main className="flex-1 overflow-y-auto px-4 py-4">
         <div className="mx-auto flex max-w-2xl flex-col gap-3">
           {messages.map((msg) => (
